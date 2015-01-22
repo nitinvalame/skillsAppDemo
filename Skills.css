@@ -1,0 +1,107 @@
+
+* {
+	font-family: 'Droid Sans', AvenirNext-Regular, Courier;
+	}
+	
+body {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	}
+	
+p {
+	-webkit-margin-before: 1px;
+	-webkit-margin-after: 2px;
+	padding-left: 6px;
+	}	
+	
+h1, h2, h3, h4 {
+	-webkit-margin-before: 0px;
+	-webkit-margin-after: 0px;
+	padding: 12px 6px 2px;
+	border-bottom: 1px solid lightgrey;
+	font-family: HelveticaNeue-Light, Avenir-Light;
+	}
+	
+#top, #bottom {
+	background-color: lightgrey;
+	padding: 0 6px 4px;
+	font-size: 80%;
+	}
+	
+#top h4, #bottom h4 {
+	border-bottom: 1px solid grey;
+	}
+	
+#middle {
+	padding: 0 6px 4px;
+	}
+	
+ul, ol {
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 30px;
+	}
+	
+#title {
+	color: white;
+	background-color: grey;
+	text-align: center;
+	padding-bottom:2px;
+	}
+	
+#title #youtubeicon {
+	position: absolute;
+	top: 0;
+	right: 4px;
+	display: none;
+	}
+	
+#title #back {
+	position: absolute;
+	top: 0;
+	left: 4px;
+	}	
+	
+#youtubevideo {
+	text-align: center;
+	display: none;
+	background-color: black;
+	}
+	
+#popup1 {
+	background-color: palegreen;
+	opacity: 0.9;
+	position: fixed;
+	left: 0;
+	bottom: 10%;
+	text-align: center;
+	}
+	
+#popup1 .action {
+	border: 1px solid green;
+	border-radius: 5px;
+	padding: 4px 18px;
+	}
+
+#popup2 {
+	background-color: lightblue;
+	opacity: 0.9;
+	position: fixed;
+	right: 0;
+	bottom: 10%;
+	text-align: center;
+	display: none;
+	}
+	
+#popup2 .action {
+	border: 1px solid blue;
+	border-radius: 5px;
+	padding: 4px 18px;
+	}
+	
+.disable {
+	opacity: .4;
+	}

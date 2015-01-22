@@ -1,0 +1,44 @@
+@charset "UTF-8";
+body h1 {
+	text-shadow: 0px 0px #B40844;
+	color: #DE1B1B;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	font-size: x-large;
+}
+body p strong {
+	color: #393435;
+	font-weight: bolder;
+}
+body p {
+	color: #393435;
+	font-weight: 400;
+	font-family: pt-sans;
+	font-style: normal;
+}
+body h2 {
+	color: #193AAD;
+	font-weight: 700;
+	font-size: large;
+	font-family: pt-sans;
+	font-style: normal;
+}
+body ul li {
+	color: #393435;
+}
+body ol li {
+	color: #393435;
+}
+body h4 {
+	color: #6F3611;
+	font-weight: bolder;
+	font-size: x-large;
+}
+body h3 {
+	color: #B0561C;
+	font-size: small;
+	font-weight: 900;
+}
+
+body {
+	overflow-x : scroll;
+}
