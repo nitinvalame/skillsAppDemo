@@ -10,6 +10,7 @@
 </head>
 
 <body>
+	<div id="splash"></div>
 	
 	<div id="htmlDoc"></div>
 	<div id="nav">
@@ -139,7 +140,7 @@
 		<div class="skill" id="12-100" html="100.html">Site Care: Pin Care</a><br/><span class="views"></span> <span class="learned"></span>  <span class="lab"></span> <span class="clinic"></span></div>
 	</div>
 	</div>
-	<div id="back"><img src="./back.png" width="40px" /></div>	
+	<div id="back"><img src="./Back.png" width="40px" /></div>	
 	
 	
 	
@@ -240,11 +241,23 @@
 		color: blue;
 		background-color: lightblue;
 	}	
-
+	#splash {
+		width: 99%;
+		height: 99%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10000;
+		background-color: red;
+		background: url("NursesAtWork.jpg") center;
+	}
 
 </style>
 
 <script>
+	$("#splash").click(function() {
+		$(this).fadeOut(3000);
+	});
 	$(".section").click(function() {
 		//if (localStorage.getItem("skillsAppSec") == $(this).attr("id")) {
 		//	$(".skill").slideUp(100);
@@ -350,9 +363,6 @@ $(document).ready(function() {
 	}
 
 	
-	
-
-	
 	$("#back").click(function() {
 		$("#nav").show(100);
 		updateIndex();
@@ -366,7 +376,14 @@ $(document).ready(function() {
 });
 
  function load_Skill(htmlDoc){
-	document.getElementById("htmlDoc").innerHTML='<object type="text/html" width="100%" height="100%" data="' + htmlDoc + '" ></object>';
+ 	$.get(htmlDoc)
+ 		.done(function() {
+ 			document.getElementById("htmlDoc").innerHTML='<object type="text/html" width="100%" height="100%" data="' + htmlDoc + '" ></object>';
+ 		})
+ 		.fail(function() {
+ 			document.getElementById("htmlDoc").innerHTML='<object type="text/html" width="100%" height="100%" data="0.html" ></object>';
+
+ 		})
 }
 
 </script>
