@@ -12,7 +12,8 @@
 <body>
 	<div id="splash"></div>
 	
-	<div id="htmlDoc"></div>
+	<div id="htmlDoc">
+	</div>
 	<div id="nav">
 	<h3>Skills App</h3>
 	<div class="section" id="1">Airway and Oxygen <span class="counts">Learned <span class="learnedSkills">0</span> of <span class="totalSkills"></span> Skills</span>
@@ -155,6 +156,7 @@
 		width: 100%;
 		padding: 0;
 		margin: 0;
+		xoverflow: auto;
 	}	
 	
 	#nav {
@@ -163,16 +165,16 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		overflow-y: scroll;
+		overflow: auto;
 	}
 	
 	#htmlDoc {
-		width: 99%;
-		height: 99%;
-		position: fixed;
-		top: 0;
-		right: 0;
-		overflow-y: scroll;
+		width: auto;
+		height: auto;
+		xposition: fixed;
+		xtop: 0;
+		xright: 0;
+		overflow: auto;
 	}
 	
 	
@@ -256,17 +258,15 @@
 
 <script>
 	$("#splash").click(function() {
-		$(this).fadeOut(3000);
+		$(this).fadeOut(1000);
 	});
 	$(".section").click(function() {
-		//if (localStorage.getItem("skillsAppSec") == $(this).attr("id")) {
-		//	$(".skill").slideUp(100);
-			
-		//} else {
-			$(".skill").slideUp(100);
-			$(this).find(".skill").slideDown(100);
+
+			$(".skill").slideUp();
+			//$(".section").slideDown(300);
+			$(this).find(".skill").slideDown(1000);
 			localStorage.setItem("skillsAppSec", $(this).attr("id"));
-		//}
+
 		
 	});
 	
@@ -376,9 +376,11 @@ $(document).ready(function() {
 });
 
  function load_Skill(htmlDoc){
+ 	//alert($(document).width() + "/" + $(document).height());
  	$.get(htmlDoc)
  		.done(function() {
- 			document.getElementById("htmlDoc").innerHTML='<object type="text/html" width="100%" height="100%" data="' + htmlDoc + '" ></object>';
+ 			//document.getElementById("htmlDoc").innerHTML='<div style="overflow: auto;"><object type="text/html" data="' + htmlDoc + '" ></object></div>';
+ 			document.getElementById("htmlDoc").innerHTML='<iframe type="text/html" width="' + $(document).width() + '" height="' + $(document).height() + '" src="' + htmlDoc + '" ></iframe></div>';
  		})
  		.fail(function() {
  			document.getElementById("htmlDoc").innerHTML='<object type="text/html" width="100%" height="100%" data="0.html" ></object>';

@@ -7,6 +7,15 @@ body {
 	width: 100%;
 	padding: 0;
 	margin: 0;
+	xoverflow: auto;
+	}
+	
+#outer {
+	overflow: auto;
+}
+
+div {
+	overflow-y: scroll;
 	}
 	
 p {
